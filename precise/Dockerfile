@@ -15,12 +15,12 @@ MAINTAINER Peter Niederlag "peter.niederlag@datenbetrieb.de"
 #     essential on management of anything, footprint is quite high though
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y update && \
-    apt-get -y install vim && \
-    apt-get -y install curl && \
-    apt-get -y install openssh-client && \
-    apt-get -y install net-tools && \
-    apt-get -y install locales && \
-    apt-get -y install git && \
+    apt-get -y --no-install-recommends install vim && \
+    apt-get -y --no-install-recommends install curl && \
+    apt-get -y --no-install-recommends install openssh-client && \
+    apt-get -y --no-install-recommends install net-tools && \
+    apt-get -y --no-install-recommends install locales && \
+    apt-get -y --no-install-recommends install git && \
     apt-get clean && \
     localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 && \
     rm -rf /tmp/* && \
