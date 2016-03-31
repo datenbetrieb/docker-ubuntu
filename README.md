@@ -3,6 +3,13 @@ ubuntu docker image
 
 A slim ubuntu image for docker
 
+
+releases/tags
+----------------------------
+
+Currently only most recent LTS releases _precise_ and _trusty_ are supported.
+The build depends on upstream official ubuntu and gets triggered on every upstream change.
+
 packages
 -----------------------------
 
@@ -27,4 +34,4 @@ low in size
 roadmap
 ----------------------------
 
-not yet, maybe other flavors and or releases like testing/unstable will follow.
+no further plans, subject to change at any time.
