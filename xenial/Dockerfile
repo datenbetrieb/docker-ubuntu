@@ -3,6 +3,8 @@ FROM ubuntu:xenial
 MAINTAINER Peter Niederlag "peter.niederlag@datenbetrieb.de"
 
 # injecting some packages into the base ubuntu image
+# - ca-certificats [~2 MB]
+#     openssl and certificats to support secure https connections
 # - vim [~30 MB]
 #     one of the things that have rocked linux since the beginning
 # - curl [~20 MB]
@@ -15,6 +17,7 @@ MAINTAINER Peter Niederlag "peter.niederlag@datenbetrieb.de"
 #     essential on management of anything, footprint is quite high though
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y update && \
+    apt-get -y --no-install-recommends install ca-certificates && \
     apt-get -y --no-install-recommends install vim && \
     apt-get -y --no-install-recommends install curl && \
     apt-get -y --no-install-recommends install openssh-client && \
